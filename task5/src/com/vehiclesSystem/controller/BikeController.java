@@ -22,7 +22,6 @@ public class BikeController implements VehicleController {
 
     @Override
     public void saveVehicle(Vehicle vehicle) {
-        databaseOperations.connectToDatabase();
         ApplicationContext context= new AnnotationConfigApplicationContext(Config.class);
         BikeService bikeService = (BikeService) context.getBean("bikeService");
         bikeService.saveBike((Bike) vehicle);
